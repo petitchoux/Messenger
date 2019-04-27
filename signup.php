@@ -22,27 +22,27 @@
 </div>
 <div class="form-group">
 <label>Username</label>
-<input type="text" class="form-control" name="username" placeholder="JDoe" autocomplete="off" required>
+<input type="text" class="form-control" name="user_name" placeholder="JaneDoe" autocomplete="off" required>
 </div>
 <div class="form-group">
 <label>Password</label>
-<input type="password" class="form-control" name="create_password" placeholder="Password" autocomplete="off" required>
+<input type="password" class="form-control" name="user_pass" placeholder="Password" autocomplete="off" required>
 </div>
 <div class="form-group">
 <label>Email</label>
-<input type="email" class="form-control" name="create_email" placeholder="JaneDoe@email.com" autocomplete="off" required>
+<input type="email" class="form-control" name="user_email" placeholder="JaneDoe@email.com" autocomplete="off" required>
 </div>
 <div class="form-group">
     <label class="checkbox-inline">
-        <input type="checkbox" required>I accept the <a href="#">Terms of Use</a>&amp <a href="#">Privacy Policy</a>
+        <input type="checkbox" required> I accept the <a href="#">Terms of Use </a>&amp <a href="#">Privacy Policy</a>
     </label>
 </div>
 <div class="form-group">
 <button type="submit" class="btn btn-primary btn-block btn-lg" name="sign_up">Sign Up</button>
 </div>
-<!-- <?php 
+<?php 
 include("signup_user.php"); 
-?> -->
+?>
 </form>
 <div class="text-center small" style="color: #67428B;">Already have an account? <a href="signin.php">Sign In Here</a></div>
 </body>
