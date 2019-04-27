@@ -34,9 +34,9 @@ Forgot password?
 <div class="form-group">
 <button type="submit" class="btn btn-primary btn-block btn-lg" name="sign_in">Sign In</button>
 </div>
-<!-- <?php 
+<?php 
 include("signin_user.php"); 
-?> -->
+?>
 </form>
 <div class="text-center small" style="color: #67428B;">Don't have an account? <a href="signup.php">Create One</a></div>
 </body>
