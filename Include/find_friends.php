@@ -36,7 +36,7 @@ echo "<a class='navbar-brand' href='../home.php?user_name=$user_name'>Messenger<
 ?>
 
 <ul class="navbar-nav">
-<li><a style="color: white; text-decoration: none; font-size: 20px;" href="../acount_settings.php">Settings</a></li>
+<li><a style="color: white; text-decoration: none; font-size: 20px;" href="../account_settings.php">Settings</a></li>
 </ul>
 
 </nav><br>
