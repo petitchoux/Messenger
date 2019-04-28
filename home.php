@@ -78,7 +78,7 @@ if(!isset($_SESSION['user_email'])) {
                                     <p><?php echo "$username"; ?></p>
                                     <span>
                                         <?php echo $total; ?> messages
-                                    </span> &nbsp $nbsp
+                                    </span> &nbsp &nbsp
                                         <button name="logout" class="btn btn-danger">Logout</button>
                                     </form>
                                     <?php 
@@ -103,7 +103,7 @@ if(!isset($_SESSION['user_email'])) {
                                         $sender_username = $row['sender_username'];
                                         $receiver_username = $row['receiver_username'];
                                         $msg_content = $row['msg_content'];
-                                        $msg_data = $row['msg_data'];
+                                        $msg_date = $row['msg_date'];
                                     ?>
                                     <ul>
                                     <?php 
