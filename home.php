@@ -109,7 +109,7 @@ if(!isset($_SESSION['user_email'])) {
                                     <?php 
                                         if($user_name == $sender_username AND $username == $receiver_username){
                                             echo "<li><div class='rightside-right-chat'>
-                                            <span>$username <small>$msg_date</small></span><br><br>
+                                            <span>$user_name <small>$msg_date</small></span><br><br>
                                             <p>$msg_content</p>
                                             </div>
                                             </li>";
