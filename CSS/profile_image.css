@@ -1,0 +1,48 @@
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    margin: auto;
+    text-align: center;
+    font-family: arial;
+}
+
+.card img {
+    height: 200px;
+}
+
+.title {
+    color: grey;
+    font-size: 18px;
+}
+
+button {
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 9px;
+    color: white;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+}
+
+#update_profile {
+    position: absolute;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 4px;
+    color: white;
+    background-color: #000;
+}
+
+label {
+    padding: 7px;
+    display: table;
+    color: #fff;
+}
+
+input[type="file"] {
+    display: none;
+}
