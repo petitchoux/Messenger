@@ -37,31 +37,39 @@ A simple interface will be established for the frontend to allow the user to be 
 
 ## Walkthroughs
 
-<img src="https://i.imgur.com/U3d2dU4.png">
-User signs up
+<img src="https://i.imgur.com/U3d2dU4.png" width="700">
+User signs up<br/>
+
 
 <img src="https://i.imgur.com/dJSD9Xl.png">
-Messaging directory
+Messaging directory<br/>
 
-<img src="https://i.imgur.com/fCJgluK.png">
-Search for a user
+
+<img src="https://i.imgur.com/fCJgluK.png" width="300">
+Search for a user<br/>
+
 
 <img src="https://i.imgur.com/Tyhp87r.png">
-Account settings
+Account settings<br/>
 
-<img src="https://i.imgur.com/y4Kelz5.png">
-Change profile image
+
+<img src="https://i.imgur.com/y4Kelz5.png" width="300">
+Change profile image<br/>
+
 
 <img src="https://i.imgur.com/bxwYgFz.png">
-Change password
+Change password<br/>
 
-<img src="https://i.imgur.com/nw7J5Et.png">
-Password recovery
+
+<img src="https://i.imgur.com/nw7J5Et.png" width="300">
+Password recovery<br/>
+
 
 ### Databases
 
-<img src="https://i.imgur.com/LmiM8Wy.png">
-Users
+<img src="https://i.imgur.com/LmiM8Wy.png" width="700">
+Users<br/>
 
-<img src="https://i.imgur.com/SdniUa0.png">
+
+<img src="https://i.imgur.com/SdniUa0.png" width="700">
 Messages
