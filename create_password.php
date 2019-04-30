@@ -50,13 +50,13 @@ if(isset($_POST['change'])){
         ";
     }
 
-    if($pass1 < 7 AND $pass2 < 7){
+    if(strlen($pass1) < 7){
         echo "
         <div class='alert alert-danger'><strong>Your password must be 8 or more characters.</strong></div>
         ";
     }
 
-    if($pass 1==$pass2){
+    if($pass 1==$pass2 AND strlen($pass1) > 7){
         $update_pass = mysqli_query($con, "UPDATE users SET user_pass='$pass1' WHERE user_email='$user'");
         session_destroy();
         echo "<script>alert('Please login with your new password.')</script>";

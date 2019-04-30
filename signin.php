@@ -30,7 +30,7 @@
 </div>
 <div class="small">
 Forgot password?
-<a href="forgot_password.php">Click Here</a></div><br>
+<a href="forgot_pass.php">Click Here</a></div><br>
 <div class="form-group">
 <button type="submit" class="btn btn-primary btn-block btn-lg" name="sign_in">Sign In</button>
 </div>

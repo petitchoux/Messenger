@@ -46,7 +46,7 @@ echo "<a class='navbar-brand' href='../home.php?user_name=$user_name'>Messenger<
 </div>
 <div class="col-sm-4">
 <form class="search_form" action="">
-<input type="text" name="search_query" placeholder="Search Friends" autocomplete="off" required>
+<input type="text" name="search_query" placeholder="Enter name here..." autocomplete="off" required>
 <button class="btn" type="submit" name="search_btn">Search</button>
 </form>
 </div>
