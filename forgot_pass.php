@@ -44,7 +44,7 @@ if(isset($_POST['submit'])){
     $email = htmlentities(mysqli_real_escape_string($con, $_POST['email']));
     $recovery_account = htmlentities(mysqli_real_escape_string($con, $_POST['hometown']));
 
-    $select_user = "SELECT * FROM users WHERE user_emai;='$email' AND forgotten_answer='$recovery_account'";
+    $select_user = "SELECT * FROM users WHERE user_email='$email' AND forgotten_answer='$recovery_account'";
 
     $query = mysqli_query($con, $select_user);
 

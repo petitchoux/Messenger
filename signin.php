@@ -26,7 +26,7 @@
 </div>
 <div class="form-group">
 <label>Password</label>
-<input type="password" class="form-control" name="password" placeholder="Password" autocomplete="off" required>
+<input type="password" class="form-control" name="pass" placeholder="Password" autocomplete="off" required>
 </div>
 <div class="small">
 Forgot password?

@@ -56,7 +56,7 @@ if(isset($_POST['change'])){
         ";
     }
 
-    if($pass 1==$pass2 AND strlen($pass1) > 7){
+    if($pass1==$pass2 AND strlen($pass1) > 7){
         $update_pass = mysqli_query($con, "UPDATE users SET user_pass='$pass1' WHERE user_email='$user'");
         session_destroy();
         echo "<script>alert('Please login with your new password.')</script>";
