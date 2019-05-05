@@ -17,27 +17,28 @@
 <div class="signin-form">
 <form action="" method="post">
 <div class="form-header">
-<h2>Sign In</h2>
-<p>Login to Messenger</p>
+<img src="Images\icon.png" alt="icon" style="width:80px">
+<br/><br/><br/>
+<h2>Messenger</h2>
+<p>Instantly connect with people in your life.</p>
+<p>Sign in with Facebook to get started.</p>
 </div>
 <div class="form-group">
-<label>Email</label>
-<input type="email" class="form-control" name="email" placeholder="JohnSmith@email.com" autocomplete="off" required>
+<input type="email" class="form-control" name="email" placeholder="Email or phone number" autocomplete="off" required>
 </div>
 <div class="form-group">
-<label>Password</label>
 <input type="password" class="form-control" name="pass" placeholder="Password" autocomplete="off" required>
 </div>
-<div class="small">
-Forgot password?
-<a href="forgot_pass.php">Click Here</a></div><br>
 <div class="form-group">
-<button type="submit" class="btn btn-primary btn-block btn-lg" name="sign_in">Sign In</button>
+<button type="submit" class="btn btn-primary btn-block btn-lg" name="sign_in">Continue</button>
 </div>
 <?php 
 include("signin_user.php"); 
 ?>
 </form>
-<div class="text-center small" style="color: #67428B;">Don't have an account? <a href="signup.php">Create One</a></div>
+<br/>
+<div class="text-center small" >
+<pre><a href="signup.php">Not on Facebook?</a>  |  <a href="forgot_pass.php">Forgot password</a> </pre>
+</div>
 </body>
 </html>

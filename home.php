@@ -13,7 +13,7 @@ if(!isset($_SESSION['user_email'])) {
 <title>Messenger | Home</title>
 
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-<link rel="stylesheet" type="text/css" href="css/home.css">
+<link rel="stylesheet" type="text/css" href="css/home-new.css">
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
@@ -22,16 +22,19 @@ if(!isset($_SESSION['user_email'])) {
 </head>
 
 <body>
-    <div class="container main-section">
+    <div class="container-fluid mw-100 main-section">
         <div class="row">
             <div class="col-md-3 col-sm-3 col-xs-12 left-sidebar">
-                <div class="input-group searchbox">
+                <div class="messenger-header">
+                   Messenger
+                </div>                
+				<div class="input-group searchbox">
                     <div class="input-group-btn">
-                        <a href="include/find_friends.php"><button class="btn btn-default search-icon" name="search_user" type="submit">Find Your Friend</button></a>
+                        <a href="include/find_friends.php"><button class="btn btn-default search-icon" name="search_user" type="submit">Search Messenger</button></a>
                     </div>
                 </div>
                     <div class="left-chat">
-                        <ul>
+                        <ul class="left-chat-user-list">
                             <?php include("include/get_users_data.php");?>
                         </ul>
                     </div>
@@ -69,7 +72,11 @@ if(!isset($_SESSION['user_email'])) {
                             $total = mysqli_num_rows($run_messages);
 
                         ?>
-                            <div class="col-md-12 right-header">
+                            <div class="col-md-12 right-header-chat-name">
+								<?php echo "$username"; ?><br/>
+								<div class="active-status">Active 10y ago </div>
+							</div>
+							<div class="col-md-12 right-header">
                                 <div class="right-header-img">
                                     <img src= <?php echo "$user_profile_image"; ?>>
                                 </div>
@@ -130,7 +137,7 @@ if(!isset($_SESSION['user_email'])) {
                                 <div class="row">
                                     <div class="col-md-12 right-chat-textbox">
                                         <form method="post">
-                                        <input autocomplete="off" type="text" name="msg_content" placeholder="Write your message...">
+                                        <input class = "text-bar" autocomplete="off" type="text" name="msg_content" placeholder="Type a message...">
                                         <button class="btn" name="submit"><i class="fa fa-telegram" aria-hidden="true"></i>
                                         </button>
                                     </div>
