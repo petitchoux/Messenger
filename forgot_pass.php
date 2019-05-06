@@ -17,22 +17,22 @@
 <div class="signin-form">
 <form action="" method="post">
 <div class="form-header">
+<img src="Images\icon.png" alt="icon" style="width:80px">
+<br/><br/><br/>
 <h2>Forgot Password</h2>
 <p>Messenger</p>
 </div>
 <div class="form-group">
-<label>Email</label>
-<input type="email" class="form-control" name="email" placeholder="JohnSmith@email.com" autocomplete="off" required>
+<input type="email" class="form-control" name="email" placeholder="Email address" autocomplete="off" required>
 </div>
 <div class="form-group">
-<label>What is your hometown?</label>
-<input type="text" class="form-control" name="hometown" placeholder="City" autocomplete="off" required>
+<input type="text" class="form-control" name="hometown" placeholder="What is your hometown?" autocomplete="off" required>
 </div>
 <div class="form-group">
 <button type="submit" class="btn btn-primary btn-block btn-lg" name="submit">Submit</button>
 </div>
 </form>
-<div class="text-center small" style="color: #67428B;">Back to Sign In? <a href="signin.php">Click Here.</a></div>
+<div class="text-center small" style="color: #67428B;"><a href="signin.php">Back to Sign In</a></div>
 
 <?php
 

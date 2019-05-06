@@ -32,7 +32,7 @@ include("include/connection.php");
         else if($rand == 2)
             $profile_pic = "images/profilepic2.jpg";
 
-        $insert = "INSERT INTO users (user_name, user_pass, user_email, user_profile) VALUES('$name','$password','$email','$profile_pic')";
+        $insert = "INSERT INTO users (user_name, user_pass, user_email, user_profile) VALUES('$name','$pass','$email','$profile_pic')";
 
         $query = mysqli_query($con, $insert);
 

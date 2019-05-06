@@ -66,6 +66,10 @@ body {
     margin-top: 2px;
 }
 
+.agreement-checkbox{
+	padding-left: 50px;
+}
+
 .signup-form .btn {
     font-size: 20px;
     font-weight: bold;
