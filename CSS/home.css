@@ -18,17 +18,18 @@
 }
 
 .dropbtn {
-  color: black;
-  padding: 2px;
-  font-size: 16px;
-  border: none;
-  cursor: pointer;
+	background-color:#ffffff;
+	color: black;
+	padding: 2px;
+	font-size: 16px;
+	border: none;
+	cursor: pointer;
 }
 
 
 .dropdown {
-  position: relative;
-  display: inline-block;
+	display: inline-block;
+	float:left;
 }
 
 .dropdown-content {
@@ -65,7 +66,9 @@
 
 .show {display: block;}
 
-
+.messenger-header-title{
+	padding-right:25px;
+}
 
 .searchbox {
     width: 100%;
@@ -264,8 +267,10 @@
 .right-chat-textbox button {
 	height: 40px;
     width: 70px;
-    margin-left: 20px;
+	font-weight: bold;
+	color: 0084ff;
 }
+
 
 .rightside-left-chat span i,
 .rightside-right-chat span i {
