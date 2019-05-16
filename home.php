@@ -2,7 +2,6 @@
 <?php
 session_start();
 include("include/connection.php");
-
 if(!isset($_SESSION['user_email'])) {
     header("location: signin.php");
 } else {
@@ -23,9 +22,8 @@ function myFunction() {
   document.getElementById("myDropdown").classList.toggle("show");
 }
 
-// Close the dropdown if the user clicks outside of it
 window.onclick = function(event) {
-  if (!event.target.matches('.dropbtn')) {
+  if (!event.target.matches('.dropbtn-img')) {
     var dropdowns = document.getElementsByClassName("dropdown-content");
     var i;
     for (i = 0; i < dropdowns.length; i++) {
@@ -49,15 +47,14 @@ window.onclick = function(event) {
 				<div class="messenger-header">
 					<div class="dropdown">
 						<button onclick="myFunction()" class="dropbtn">
-						Setting
+						<img class="dropbtn-img" src="Images\setting_icon.png" alt="icon" style="width:25px">
 						</button>
 						<div id="myDropdown" class="dropdown-content">
 							<a href="account_settings.php">Setting</a>
 							<a href="#about">Log out</a>
 						</div>
 					</div>								
-					<img src="Images\setting_icon.png" alt="icon" style="width:25px">
-					<div>Messenger</div>
+					<div class="messenger-header-title">Messenger</div>
                 </div>                
 				<div class="input-group searchbox">
                     <div class="input-group-btn">
@@ -81,6 +78,7 @@ window.onclick = function(event) {
 
                             $user_id = $row['user_id'];
                             $user_name = $row['user_name'];
+							
                         ?>
                         <!-- Getting the user data on which the user clicks -->
                         <?php 
@@ -116,7 +114,7 @@ window.onclick = function(event) {
                                     <p><?php echo "$username"; ?></p>
                                     <span>
                                         <?php echo $total; ?> messages
-                                    </span> &nbsp &nbsp
+									</span> &nbsp &nbsp
                                         <button name="logout" class="btn btn-danger">Logout</button>
                                     </form>
                                     <?php 
@@ -169,14 +167,14 @@ window.onclick = function(event) {
                                     <div class="col-md-12 right-chat-textbox">
                                         <form method="post">
                                         <input class = "text-bar" autocomplete="off" type="text" name="msg_content" placeholder="Type a message...">
-                                        <button class="btn" name="submit"><i class="fa fa-telegram" aria-hidden="true"></i>
+                                        <button class="btn" name="submit"><i class="fa fa-telegram">Send</i>
                                         </button>
                                     </div>
                                 </div>
                         </div>
                     </div>
                 </div>
-                    <?php
+    <?php
 
     if(isset($_POST['submit'])){
         $msg = htmlentities($_POST['msg_content']);
@@ -192,7 +190,7 @@ window.onclick = function(event) {
     } else {
         $insert = "INSERT INTO users_chat(sender_username, receiver_username, msg_content, msg_status, msg_date) VALUES('$user_name','$username', '$msg', 'unread', NOW())";
         $run_insert = mysqli_query($con, $insert);
-    }
+		}
     }
     ?>
 
