@@ -13,20 +13,51 @@ if(!isset($_SESSION['user_email'])) {
 <title>Messenger | Home</title>
 
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-<link rel="stylesheet" type="text/css" href="css/home-new.css">
+<link rel="stylesheet" type="text/css" href="css/home.css">
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+<script>
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+
+</script>
+
 
 </head>
 
 <body>
     <div class="container-fluid mw-100 main-section">
         <div class="row">
-            <div class="col-md-3 col-sm-3 col-xs-12 left-sidebar">
-                <div class="messenger-header">
-                   Messenger
+            <div class="col-md-3 col-sm-3 col-xs-12 left-sidebar">		
+				<div class="messenger-header">
+					<div class="dropdown">
+						<button onclick="myFunction()" class="dropbtn">
+						Setting
+						</button>
+						<div id="myDropdown" class="dropdown-content">
+							<a href="account_settings.php">Setting</a>
+							<a href="#about">Log out</a>
+						</div>
+					</div>								
+					<img src="Images\setting_icon.png" alt="icon" style="width:25px">
+					<div>Messenger</div>
                 </div>                
 				<div class="input-group searchbox">
                     <div class="input-group-btn">
