@@ -3,6 +3,7 @@
 session_start();
 
 session_destroy();
-header("Location:signin.php");
+unset($_SESSION['user_email']);
+header("Location: signin.php");
 
 ?>

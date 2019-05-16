@@ -51,7 +51,7 @@ window.onclick = function(event) {
 						</button>
 						<div id="myDropdown" class="dropdown-content">
 							<a href="account_settings.php">Setting</a>
-							<a href="#about">Log out</a>
+							<a href="logout.php" id="logout">Logout</a>
 						</div>
 					</div>								
 					<div class="messenger-header-title">Messenger</div>
@@ -115,13 +115,10 @@ window.onclick = function(event) {
                                     <span>
                                         <?php echo $total; ?> messages
 									</span> &nbsp &nbsp
-                                        <button name="logout" class="btn btn-danger">Logout</button>
                                     </form>
                                     <?php 
                                     if(isset($_POST['logout'])){
-                                        $update_msg = mysqli_query($con, "UPDATE users SET log_in='Offline' WHERE user_name='$user_name'");
-                                        header("Location:logout.php");
-                                        exit();
+                                        $update_status = mysqli_query($con, "UPDATE users SET log_in='Offline' WHERE user_name='$user_name'");
                                     }
                                     ?>
                                 </div>
@@ -133,6 +130,7 @@ window.onclick = function(event) {
                                     $update_msg = mysqli_query($con, "UPDATE users_chat SET msg_status='read' WHERE sender_username='$username' AND receiver_username='$user_name'");
 
                                     $sel_msg = "SELECT * FROM users_chat WHERE (sender_username='$user_name' AND receiver_username='$username') OR (receiver_username='$user_name' AND sender_username='$username') ORDER BY 1 ASC";
+                                    
                                     $run_msg = mysqli_query($con, $sel_msg);
 
                                     while ($row = mysqli_fetch_array($run_msg)) {
@@ -194,6 +192,7 @@ window.onclick = function(event) {
     }
     ?>
 
+// Autoscrolls to the bottom to the most recent messages
     <script>
         $('#scrolling_to_bottom').animate({
             scrollTop: $('#scrolling_to_bottom').get(0).scrollHeight}, 1000);
