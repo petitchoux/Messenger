@@ -17,7 +17,8 @@ if(!isset($_SESSION['user_email'])) {
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-<script type="text/javascript">
+
+<script>
 function myFunction() {
   document.getElementById("myDropdown").classList.toggle("show");
 }
@@ -34,11 +35,19 @@ window.onclick = function(event) {
     }
   }
 }
+
 </script>
 
-
-
-
+<script>
+$(document).ready(function(){
+  $("#user_lookup").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $(".left-chat-user-list li").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+</script>
 </head>
 
 <body>
@@ -59,7 +68,7 @@ window.onclick = function(event) {
                 </div>                
 				<div class="input-group searchbox">
                     <div class="input-group-btn">
-                        <a href="include/find_friends.php"><button class="btn btn-default search-icon" name="search_user" type="submit">Search Messenger</button></a>
+						<input type="text" id="user_lookup" placeholder="Search Messenger">
                     </div>
                 </div>
                     <div class="left-chat">
@@ -125,56 +134,37 @@ window.onclick = function(event) {
                                 </div>
                             </div>
                         </div>
+							<?php
+								$update_msg = mysqli_query($con, "UPDATE users_chat SET msg_status='read' WHERE sender_username='$username' AND receiver_username='$user_name'");
+								$sel_msg = "SELECT * FROM users_chat WHERE (sender_username='$user_name' AND receiver_username='$username') OR (receiver_username='$user_name' AND sender_username='$username') ORDER BY 1 ASC";
+							?>
                             <div class="row">
-                                <div id="scrolling_to_bottom" class="col-md-12 right-header-contentChat" id="chat-window">
-                                    <?php 
-                                    $update_msg = mysqli_query($con, "UPDATE users_chat SET msg_status='read' WHERE sender_username='$username' AND receiver_username='$user_name'");
-
-                                    $sel_msg = "SELECT * FROM users_chat WHERE (sender_username='$user_name' AND receiver_username='$username') OR (receiver_username='$user_name' AND sender_username='$username') ORDER BY 1 ASC";
-                                    
-                                    $run_msg = mysqli_query($con, $sel_msg);
-
-                                    while ($row = mysqli_fetch_array($run_msg)) {
-                                        $sender_username = $row['sender_username'];
-                                        $receiver_username = $row['receiver_username'];
-                                        $msg_content = $row['msg_content'];
-                                        $msg_date = $row['msg_date'];
-                                    ?>
-                                    <ul>
-                                    <?php 
-                                        if($user_name == $sender_username AND $username == $receiver_username){
-                                            echo "<li><div class='rightside-right-chat'>
-                                            <span>$user_name <small>$msg_date</small></span><br><br>
-                                            <p>$msg_content</p>
-                                            </div>
-                                            </li>";
-                                        } else if($user_name == $receiver_username AND $username == $sender_username){
-                                            echo "<li><div class='rightside-left-chat'>
-                                            <span>$username <small>$msg_date</small></span><br><br>
-                                            <p>$msg_content</p>
-                                            </div>
-                                            </li>";
-                                        }
-                                    ?>
-                                    </ul>
-                                    <?php
-                                    }
-                                    ?>
+                                <div id="scrolling_to_bottom" class="col-md-12 right-header-contentChat">
+									<?php include("include/get_chat_history.php");?>
                                 </div>
+							<script>
+								$(document).ready(function(){	
+									$("#submit_btn").click(function(){
+										$("#scrolling_to_bottom").load(window.location.pathname + " #scrolling_to_bottom");
+									});
+								});	
+							</script>
                             </div>
                                 <div class="row">
                                     <div class="col-md-12 right-chat-textbox">
                                         <form method="post">
                                         <input class = "text-bar" autocomplete="off" type="text" name="msg_content" placeholder="Type a message...">
-                                        <button onclick="reload_chat()" class="btn" name="submit"><i class="fa fa-telegram">Send</i>
+                                        <button class="btn" onclick="reload()" id= "submit_btn"name="submit"><i class="fa fa-telegram">Send</i>
                                         </button>
                                     </div>
+									<div>
+									
+									</div>
                                 </div>
                         </div>
                     </div>
                 </div>
-
-    <?php
+<?php
 
     if(isset($_POST['submit'])){
         $msg = htmlentities($_POST['msg_content']);
@@ -190,9 +180,11 @@ window.onclick = function(event) {
 		} else {
         $insert = "INSERT INTO users_chat(sender_username, receiver_username, msg_content, msg_status, msg_date) VALUES('$user_name','$username', '$msg', 'unread', NOW())";
         $run_insert = mysqli_query($con, $insert); 
+		unset($_POST['submit']);
+		header('Location: home.php?user_name=Joyce');
 		}
     }
-    ?>
+?>
 
 <!--Autoscrolls to the bottom to the most recent messages-->
     <script>
