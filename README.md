@@ -10,7 +10,7 @@
 Messenger is a chatting web application that allows users to create an account and log in, search for other users, and send and receive messages. Additionally, the user will be able to change their email, password, profile image, and recover their password with a security question if forgotten. 
 
 ### Functionality & Approach
-A simple interface will be established for the frontend to allow the user to be able to interact with the application. This will include simple forms where the user will be asked for their information and input to create an account and send messages. PHP and SQL will be used to communicate with the local server and database to get and post information. JS is used to make the web application dynamic. 
+A simple interface will be established for the frontend to allow the user to be able to interact with the application. This will include simple forms where the user will be asked for their information and input to create an account and send messages. PHP and SQL will be used to communicate with the local server and database to get and post information. 
 
 ## User Stories 
 
@@ -26,20 +26,27 @@ A simple interface will be established for the frontend to allow the user to be 
 * Login -> Signup (if user does not have an account)
 * Signup -> Login
 * Login -> Forget Password Recovery
-* Chat -> Search for a user in the search bar
+* Chat -> Select a user 
+* Chat -> Search for a user
 * Chat -> Logout
-* Chat -> Settings
+* Search -> Results
+* Results -> Chat
+* Search -> Settings
 * Settings -> Change email, password, security answer
 * Settings -> Upload profile image 
 
 ## Walkthroughs
 
-<img src="https://i.imgur.com/UFtSqYq.png" width="400">
+<img src="https://i.imgur.com/U3d2dU4.png" width="700">
 User signs up<br/>
 
 
-<img src="https://i.imgur.com/niWg6ac.png">
+<img src="https://i.imgur.com/dJSD9Xl.png">
 Messaging directory<br/>
+
+
+<img src="https://i.imgur.com/fCJgluK.png" width="300">
+Search for a user<br/>
 
 
 <img src="https://i.imgur.com/Tyhp87r.png">
@@ -54,7 +61,7 @@ Change profile image<br/>
 Change password<br/>
 
 
-<img src="https://i.imgur.com/g8PtLE4.png" width="300">
+<img src="https://i.imgur.com/nw7J5Et.png" width="300">
 Password recovery<br/>
 
 

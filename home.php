@@ -61,11 +61,7 @@ $(document).ready(function(){
 						</button>
 						<div id="myDropdown" class="dropdown-content">
 							<a href="account_settings.php">Setting</a>
-<<<<<<< HEAD
-							<a href="logout.php" id="logout">Logout</a>
-=======
 							<a href="logout.php" id="logout">Log Out</a>
->>>>>>> Visual-Update
 						</div>
 					</div>								
 					<div class="messenger-header-title">Messenger</div>
@@ -146,62 +142,14 @@ $(document).ready(function(){
 							?>
                             <div class="row">
                                 <div id="scrolling_to_bottom" class="col-md-12 right-header-contentChat">
-<<<<<<< HEAD
-                                    <?php 
-                                    $update_msg = mysqli_query($con, "UPDATE users_chat SET msg_status='read' WHERE sender_username='$username' AND receiver_username='$user_name'");
-
-                                    $sel_msg = "SELECT * FROM users_chat WHERE (sender_username='$user_name' AND receiver_username='$username') OR (receiver_username='$user_name' AND sender_username='$username') ORDER BY 1 ASC";
-                                    
-                                    $run_msg = mysqli_query($con, $sel_msg);
-
-                                    while ($row = mysqli_fetch_array($run_msg)) {
-                                        $sender_username = $row['sender_username'];
-                                        $receiver_username = $row['receiver_username'];
-                                        $msg_content = $row['msg_content'];
-                                        $msg_date = $row['msg_date'];
-                                    ?>
-                                    <ul>
-                                    <?php 
-                                        if($user_name == $sender_username AND $username == $receiver_username){
-                                            echo "<li><div class='rightside-right-chat'>
-                                            <span>$user_name <small>$msg_date</small></span><br><br>
-                                            <p>$msg_content</p>
-                                            </div>
-                                            </li>";
-                                        } else if($user_name == $receiver_username AND $username == $sender_username){
-                                            echo "<li><div class='rightside-left-chat'>
-                                            <span>$username <small>$msg_date</small></span><br><br>
-                                            <p>$msg_content</p>
-                                            </div>
-                                            </li>";
-                                        }
-                                    ?>
-                                    </ul>
-                                    <?php
-                                    }
-                                    ?>
-=======
 									<?php include("include/get_chat_history.php");?>
->>>>>>> Visual-Update
                                 </div>
-							<script>
-								$(document).ready(function(){	
-									$("#submit_btn").click(function(){
-										$("#scrolling_to_bottom").load(window.location.pathname + " #scrolling_to_bottom");
-									});
-								});	
-							</script>
                             </div>
                                 <div class="row">
                                     <div class="col-md-12 right-chat-textbox">
                                         <form action = "send.php" method="post">
                                         <input class = "text-bar" autocomplete="off" type="text" name="msg_content" placeholder="Type a message...">
-<<<<<<< HEAD
                                         <button class="btn" id= "submit_btn" name="submit"><i class="fa fa-telegram">Send</i></button>
-=======
-                                        <button class="btn" onclick="reload()" id= "submit_btn"name="submit"><i class="fa fa-telegram">Send</i>
-                                        </button>
->>>>>>> 818e64f771e47d64d3cf6431f5aa8bc1c6592978
                                     </div>
 									<div>
 									
@@ -210,37 +158,9 @@ $(document).ready(function(){
                         </div>
                     </div>
                 </div>
-<<<<<<< HEAD
 
-=======
-<?php
 
-    if(isset($_POST['submit'])){
-        $msg = htmlentities($_POST['msg_content']);
-
-        if($msg == ""){
-            echo "<div class='alert alert-danger'>
-            <strong><center>Message was unable to send</center></strong>
-            </div>";
-        } else if(strlen($msg)>255){
-            echo "<div class='alert alert-danger'>
-            <strong><center>Message is too long. Maxium characters: 255</center></strong>
-            </div>";
-		} else {
-        $insert = "INSERT INTO users_chat(sender_username, receiver_username, msg_content, msg_status, msg_date) VALUES('$user_name','$username', '$msg', 'unread', NOW())";
-        $run_insert = mysqli_query($con, $insert); 
-		unset($_POST['submit']);
-		header('Location: home.php?user_name=Joyce');
-		}
-    }
-?>
->>>>>>> 818e64f771e47d64d3cf6431f5aa8bc1c6592978
-
-<<<<<<< HEAD
-// Autoscrolls to the bottom to the most recent messages
-=======
 <!--Autoscrolls to the bottom to the most recent messages-->
->>>>>>> Visual-Update
     <script>
         $('#scrolling_to_bottom').animate({
             scrollTop: $('#scrolling_to_bottom').get(0).scrollHeight}, 1000);
