@@ -144,12 +144,24 @@ $(document).ready(function(){
                                 <div id="scrolling_to_bottom" class="col-md-12 right-header-contentChat">
 									<?php include("include/get_chat_history.php");?>
                                 </div>
+							<script>
+								$(document).ready(function(){	
+									$("#submit_btn").click(function(){
+										$("#scrolling_to_bottom").load(window.location.pathname + " #scrolling_to_bottom");
+									});
+								});	
+							</script>
                             </div>
                                 <div class="row">
                                     <div class="col-md-12 right-chat-textbox">
                                         <form action = "send.php" method="post">
                                         <input class = "text-bar" autocomplete="off" type="text" name="msg_content" placeholder="Type a message...">
+<<<<<<< HEAD
                                         <button class="btn" id= "submit_btn" name="submit"><i class="fa fa-telegram">Send</i></button>
+=======
+                                        <button class="btn" onclick="reload()" id= "submit_btn"name="submit"><i class="fa fa-telegram">Send</i>
+                                        </button>
+>>>>>>> 818e64f771e47d64d3cf6431f5aa8bc1c6592978
                                     </div>
 									<div>
 									
@@ -158,7 +170,31 @@ $(document).ready(function(){
                         </div>
                     </div>
                 </div>
+<<<<<<< HEAD
 
+=======
+<?php
+
+    if(isset($_POST['submit'])){
+        $msg = htmlentities($_POST['msg_content']);
+
+        if($msg == ""){
+            echo "<div class='alert alert-danger'>
+            <strong><center>Message was unable to send</center></strong>
+            </div>";
+        } else if(strlen($msg)>255){
+            echo "<div class='alert alert-danger'>
+            <strong><center>Message is too long. Maxium characters: 255</center></strong>
+            </div>";
+		} else {
+        $insert = "INSERT INTO users_chat(sender_username, receiver_username, msg_content, msg_status, msg_date) VALUES('$user_name','$username', '$msg', 'unread', NOW())";
+        $run_insert = mysqli_query($con, $insert); 
+		unset($_POST['submit']);
+		header('Location: home.php?user_name=Joyce');
+		}
+    }
+?>
+>>>>>>> 818e64f771e47d64d3cf6431f5aa8bc1c6592978
 
 <!--Autoscrolls to the bottom to the most recent messages-->
     <script>
