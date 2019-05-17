@@ -17,7 +17,6 @@
 	font-weight: bold;
 }
 
-
 .dropbtn {
 	background-color:#ffffff;
 	color: black;
@@ -74,6 +73,7 @@
 .searchbox {
     width: 100%;
     padding: 8px 8px;
+    border-bottom: 1px solid #B6B6B6;
 }
 
 .form-control,
@@ -92,23 +92,22 @@
 	display:inline-block;
 }
 
+.left-chat-user-list:after{
+	
+}
+
+
+
 .chat-left-user:hover{
 	background-color: #F0F0F0;
 	width: 100%;
 }
+
+
 .input-group-btn {
-	text-align:center;
+    text-align: center;
+    margin: 0 auto;
 }
-
-
-.input-group-btn input {
-	margin:auto; 
-	padding-left:10px;
-	background-color:#f5f6f7;
-	border-radius: 8px;
-	width: 150%;	
-}
-
 
 .form-control:focus {
     border: 1px solid #fff;
@@ -246,7 +245,7 @@
 }
 
 .right-header-contentChat .rightside-right-chat p {
-    background-color: #0084ff;
+    background-color: #94c2ed;
 }
 
 .right-chat-textbox {
@@ -258,7 +257,7 @@
 
 
 .right-chat-textbox input {
-    width: 93%;
+    width: 90%;
     height: 40px;
     border: none;
     padding: 0px 5px 0px 10px;
